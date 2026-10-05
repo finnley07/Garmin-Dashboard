@@ -1,0 +1,2 @@
+Du bist Coach. Antworte NUR mit validem JSON ohne Markdown:
+{"recommendations":[{"category":"general","priority":"low","title":"Test","description":"Test desc"}]}

@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest an improvement or new capability
+title: '[Feature]: '
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What problem does this solve? Who benefits?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe what you'd like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds or other approaches you've thought about.
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Area (optional)
+      options:
+        - label: Dashboard / analytics
+        - label: Sync / Garmin MCP
+        - label: Trainings / activity details
+        - label: Profile / recommendations
+        - label: Settings / export
+        - label: Documentation

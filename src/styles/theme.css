@@ -1,0 +1,235 @@
+:root {
+  --bg: #0a0a0c;
+  --bg-elevated: #101012;
+  --surface: #141416;
+  --surface-elevated: #1a1a1e;
+  --surface-solid: #141416;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(59, 130, 246, 0.42);
+  --border-glow: rgba(59, 130, 246, 0.2);
+  --text: #ececef;
+  --text-muted: #8a8a94;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-2: #3b82f6;
+  --accent-3: #64748b;
+  --accent-soft: rgba(59, 130, 246, 0.1);
+  --accent-gradient: #3b82f6;
+  --accent-gradient-warm: #3b82f6;
+  --success: #22c55e;
+  --warning: #eab308;
+  --error: #ef4444;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-glow: none;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --transition-fast: 0.15s ease;
+  --transition-smooth: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  position: relative;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.35);
+}
+
+.text-gradient {
+  color: var(--accent);
+}
+
+/* ── Shared cards ── */
+#app .stat-card,
+#app .wellness-card,
+#app .chart-card,
+#app .recommendations-card,
+#app .recent-card,
+#app .pr-card,
+#app .plan-card,
+#app .race-card,
+#app .progress-card,
+#app .body-map-card,
+#app .activity-list-card,
+#app .form-section,
+#app .recovery-panel,
+#app .vo2-panel,
+#app .load-panel,
+#app .training-plan-card,
+#app .metric-card,
+#app .summary-card,
+#app .recommendation,
+#app .detail-placeholder,
+#app .panel.panel-inline,
+#app .collapse-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+#app .stat-card:hover,
+#app .wellness-card:hover,
+#app .chart-card:hover,
+#app .recent-card:hover,
+#app .pr-card:hover,
+#app .plan-card:hover,
+#app .race-card:hover,
+#app .progress-card:hover,
+#app .body-map-card:hover,
+#app .metric-card:hover,
+#app .summary-card:hover,
+#app .recommendation:hover {
+  border-color: var(--border-hover);
+}
+
+#app .activity-row,
+#app .type-card,
+#app .recent-item,
+#app .pr-row {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+#app .activity-row:hover,
+#app .type-card:hover,
+#app .recent-item:hover,
+#app .pr-row:hover {
+  border-color: var(--border-hover);
+  background: rgba(59, 130, 246, 0.04);
+}
+
+#app .type-card.active {
+  border-color: var(--accent);
+  background: rgba(59, 130, 246, 0.06);
+}
+
+#app .chart-card h3,
+#app .recommendations-card h3,
+#app .recent-card h3,
+#app .pr-card h3,
+#app .body-map-card h3,
+#app .progress-card h3,
+#app .plan-card h3,
+#app .race-card h3,
+#app .recovery-panel h3,
+#app .vo2-panel h3,
+#app .load-panel h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+#app input,
+#app select,
+#app textarea,
+#app .search-input,
+#app .lang-select select {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  transition: border-color var(--transition-fast);
+}
+
+#app input:focus,
+#app select:focus,
+#app textarea:focus,
+#app .search-input:focus {
+  outline: none;
+  border-color: var(--border-hover);
+}
+
+#app code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.info-popup {
+  position: fixed;
+  z-index: 10000;
+  width: max-content;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-hover);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text);
+  font-weight: 400;
+  font-family: var(--font-sans);
+  text-transform: none;
+  letter-spacing: normal;
+  pointer-events: none;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.info-popup.above::after,
+.info-popup.below::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+}
+
+.info-popup.above::after {
+  top: 100%;
+  border-top-color: var(--border-hover);
+}
+
+.info-popup.below::after {
+  bottom: 100%;
+  border-bottom-color: var(--border-hover);
+}
